@@ -1,0 +1,389 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+.wrapper{
+    background: url(background.jpg)
+    no-repeat center center;
+    min-height: 40rem;
+    opacity: 0.9;
+}
+
+showcase .h1{
+    text-align: center;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+nav{
+    width: 100%;
+    height: 100px;
+    background-color: #0005;
+    line-height: 80px;
+}
+
+nav ul{
+    float: right;
+    margin: 0;
+    margin-right: 1.9rem;
+}
+
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    
+}
+
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 20px;
+}
+
+.img{
+    width: 8.5%;
+    height: 100%;
+    margin-left: 0rem;
+    margin-top: 0%;
+    border-radius:100%;
+}
+
+nav ul li:hover{
+    background-color: coral;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.37rem 1rem;
+    size-adjust: auto;  
+    transition: .5s;
+    border-radius: 10px;
+}
+
+
+
+
+footer{
+    background-color: #f08c08;
+    color: #fff;
+   
+    padding: 20px;
+    margin-top: 4%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer ul li{
+    margin-bottom: 20px;
+
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+    
+    
+}
+
+nav ul li a {
+    text-decoration: none; 
+    font-size: 12px;
+    padding: 4px 8px;
+    display: block;
+    color: #130303;
+}
+
+nav ul li ul.dropdown {
+    width: 100px;
+    height: 100px;
+        
+    font-weight: bold;
+    font-size: 1.2rem;
+    
+
+    display: none;
+    position: absolute;
+    top: 100px; /* Aligns the dropdown below the parent */
+    left: -20px;
+   
+    
+   
+}
+
+nav ul li ul.dropdown li {
+    display: inline-block;
+    height: 50px;
+    position: relative;
+    z-index: 10;
+
+}
+
+nav ul li ul.dropdown li {
+    display: inline-block;
+    height: auto;
+
+}
+nav ul li:hover ul.dropdown {
+    display: inline-block; /* Show dropdown on hover */
+    background-color: #fff;
+    height: auto;
+
+    background-size: auto;
+    align-items: center;
+    padding: 0.50rem 1rem;
+    
+}
+
+nav ul li ul.dropdown li a {
+   padding: 0.10px;
+    font-size: 9px;
+    
+}
+
+
+
+
+
+:root {
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --first-color: hsl(82, 60%, 28%);
+    --title-color: hsl(0, 0%, 15%);
+    --text-color: hsl(0, 0%, 35%);
+    --body-color: hsl(0, 0%, 95%);
+    --container-color: hsl(0, 0%, 100%);
+  
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Poppins", sans-serif;
+    --h2-font-size: 1.25rem;
+    --small-font-size: .813rem;
+  }
+  
+  /*========== Responsive typography ==========*/
+  @media screen and (min-width: 1120px) {
+    :root {
+      --h2-font-size: 1.5rem;
+      --small-font-size: .875rem;
+    }
+  }
+  
+  /*=============== BASE ===============*/
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    font-family: var(--body-font);
+    background-color: var(--body-color);
+    color: var(--text-color);
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /*=============== CARD ===============*/
+  .container {
+    display: grid;
+    place-items: center;
+    margin-inline: 1.5rem;
+    padding-block: 4rem;
+    gap: 50px;
+  }
+  
+  .card__container {
+    display: grid;
+    row-gap: 3.5rem;
+  }
+  
+  .card__article {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card__img {
+    height: auto;
+    width: 328px;
+    border-radius: 1.5rem;
+  }
+  
+  .card__data {
+    width: 280px;
+    background-color: var(--container-color);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -9rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+  }
+  
+  .card__description {
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: .25rem;
+  }
+  
+  .card__title {
+    font-size: var(--h2-font-size);
+    font-weight: 500;
+    color: var(--title-color);
+    margin-bottom: .75rem;
+  }
+  
+  .card__button {
+    text-decoration: none;
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    color: var(--first-color);
+  }
+  
+  .card__button:hover {
+    text-decoration: underline;
+  }
+  
+  /* Naming animations in hover */
+  .card__article:hover .card__data {
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+  }
+  
+  .card__article:hover {
+    animation: remove-overflow 2s forwards;
+  }
+  
+  .card__article:not(:hover) {
+    animation: show-overflow 2s forwards;
+  }
+  
+  .card__article:not(:hover) .card__data {
+    animation: remove-data 1s forwards;
+  }
+  
+  /* Card animation */
+  @keyframes show-data {
+    50% {
+      transform: translateY(-10rem);
+    }
+    100% {
+      transform: translateY(-7rem);
+    }
+  }
+  
+  @keyframes remove-overflow {
+    to {
+      overflow: initial;
+    }
+  }
+  
+  @keyframes remove-data {
+    0% {
+      transform: translateY(-7rem);
+    }
+    50% {
+      transform: translateY(-10rem);
+    }
+    100% {
+      transform: translateY(.5rem);
+    }
+  }
+  
+  @keyframes show-overflow {
+    0% {
+      overflow: initial;
+      pointer-events: none;
+    }
+    50% {
+      overflow: hidden;
+    }
+  }
+  
+  /*=============== BREAKPOINTS ===============*/
+  /* For small devices */
+  @media screen and (max-width: 340px) {
+    .container {
+      margin-inline: 1rem;
+    }
+  
+    .card__data {
+      width: 250px;
+      padding: 1rem;
+    }
+    footer {
+      flex-wrap: wrap;
+      text-align: center;
+      padding: 1rem;
+  }
+  
+    footer div {
+      flex: 1;
+      margin: 0.5rem;
+  }
+  
+  }
+  
+  /* For medium devices */
+  @media screen and (min-width: 768px) {
+    .card__container {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 1.5rem;
+    }
+  
+    footer {
+      flex-wrap: wrap;
+      text-align: center;
+      padding: 1rem;
+  }
+  
+  footer div {
+      flex: 1;
+      margin: 0.5rem;
+  }
+  
+  }
+  
+  /* For large devices */
+  @media screen and (min-width: 1120px) {
+    .container {
+      height: 100vh;
+    }
+  
+    .card__container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .card__img {
+      width: 348px;
+    }
+    .card__data {
+      width: 316px;
+      padding-inline: 2.5rem;
+    }
+  
+    footer {
+      flex-wrap: wrap;
+      text-align: center;
+      padding: 1rem;
+  }
+  
+    footer div {
+      flex: 1;
+      margin: 0.5rem;
+  }
+  }
+  
+  
+  
